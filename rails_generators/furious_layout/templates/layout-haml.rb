@@ -1,6 +1,5 @@
-!!! XML
 !!! Strict
-%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+%html{ html_tags }
   %head
     %title
       Web Application
@@ -13,9 +12,9 @@
         #content_wrapper
           - unless flash.empty?
             #notification.section
-              - flash.each do |name, message| -%>
-                = content_tag :div, message, :id => "flash_\#{name}", :class => 'flash' %>
+              - flash.each do |name, message|
+                = content_tag :div, message, :id => "flash_\#{name}", :class => 'flash'
           #content_main
-            = yield %>
+            = yield
           #content_sidebar
       #footer
