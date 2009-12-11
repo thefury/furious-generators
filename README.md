@@ -20,11 +20,21 @@ Usage
 
 ### Blueprint Generator
 
+Add the blueprint css files to your public/stylesheets folder.
+
+    script/generate furious-blueprint
+
 ### JQuery Generator
+
+Add the jquery and jquery-ui files to your public/javascripts folder.
+
+    script/generate furious-jquery
 
 ### Layout Generator
 
-### Authorization Generator
+Create a standard modifiable layout along with associated css, js, and helper files
+
+    script/generate furious-layout
 
 
 Contributing
