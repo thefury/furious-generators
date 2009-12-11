@@ -1,0 +1,8 @@
+
+0.0.1
+  - initial checkin and creation
+
+0.0.2
+  - added erb layouts for layout generator
+  - added haml layouts for layout generator
+  * added cucumber tests for all generators

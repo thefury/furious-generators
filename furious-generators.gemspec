@@ -9,11 +9,15 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Trevor Oke"]
-  s.date = %q{2009-12-10}
+  s.date = %q{2009-12-11}
   s.description = %q{Custom generators for Rails applications}
   s.email = %q{trevor@trevoroke.com}
+  s.extra_rdoc_files = [
+    "README.md"
+  ]
   s.files = [
     ".gitignore",
+     "README.md",
      "Rakefile",
      "VERSION",
      "furious-generators.gemspec",

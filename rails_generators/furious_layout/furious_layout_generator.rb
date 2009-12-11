@@ -1,12 +1,7 @@
 # load inthe library
 
 class FuriousLayoutGenerator < Rails::Generator::NamedBase
-  # default options
-  #  - haml or erb
-  #  - application name
-
-  # attr_readers
-  # initialize
+  default_options :haml => false
 
   def manifest
     record do |m|
@@ -14,8 +9,11 @@ class FuriousLayoutGenerator < Rails::Generator::NamedBase
       m.directory 'app/helpers'
       m.directory 'app/views/layouts'
 
-      m.template 'layout-erb.rb', "app/views/layouts/#{file_name}.html.erb"
-      # m.template 'layout-haml.rb', 'app/views/layouts/#{file_name}.html.haml'
+      if options[:haml]
+        m.template 'layout-haml.rb', "app/views/layouts/#{file_name}.html.haml"
+      else
+        m.template 'layout-erb.rb', "app/views/layouts/#{file_name}.html.erb"
+      end
 
       m.file 'helper.rb', 'app/helpers/layout_helper.rb'
       m.file 'stylesheet.rb', "public/stylesheets/#{file_name}.css"
@@ -26,11 +24,17 @@ class FuriousLayoutGenerator < Rails::Generator::NamedBase
 
   protected
   def banner
-    "Usage: #{$0}: #{spec.name}"
+    "Usage: #{$0} furious_layout layout_name [options]"
   end
 
   def file_name
     @name.underscore
   end
 
+  def add_options!(opt)
+    opt.separator ''
+    opt.separator 'Options:'
+    opt.on("--haml",
+           "Generate haml layouts instead of erb") { |v| options[:haml] = v }
+  end
 end
