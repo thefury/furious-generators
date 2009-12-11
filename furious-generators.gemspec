@@ -13,8 +13,10 @@ Gem::Specification.new do |s|
   s.description = %q{Custom generators for Rails applications}
   s.email = %q{trevor@trevoroke.com}
   s.files = [
-    "Rakefile",
+    ".gitignore",
+     "Rakefile",
      "VERSION",
+     "furious-generators.gemspec",
      "lib/furious_generators.rb",
      "rails_generators/furious_auth/USAGE",
      "rails_generators/furious_auth/furious_auth_generator.rb",
