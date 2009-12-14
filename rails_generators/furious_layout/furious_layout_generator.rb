@@ -1,7 +1,10 @@
-# load inthe library
-
-class FuriousLayoutGenerator < Rails::Generator::NamedBase
+class FuriousLayoutGenerator < Rails::Generator::Base
   default_options :haml => false
+
+  def initialize
+    super
+    @name = @args.first || "site"
+  end
 
   def manifest
     record do |m|
@@ -23,8 +26,9 @@ class FuriousLayoutGenerator < Rails::Generator::NamedBase
   end
 
   protected
+
   def banner
-    "Usage: #{$0} furious_layout layout_name [options]"
+    "Usage: #{$0} furious_layout [layout_name] [options]"
   end
 
   def file_name

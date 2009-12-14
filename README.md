@@ -64,3 +64,7 @@ A number of other libraries have been included in these generators:
 
 * Blueprint CSS: <http://www.blueprintcss.org/>
 * JQuery: <http://jquery.com/>
+
+Other credits:
+
+* A lot of ideas were scooped from web-app-theme <//http://github.com/pilu/web-app-theme>
