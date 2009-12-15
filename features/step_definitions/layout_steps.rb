@@ -7,10 +7,10 @@ When /^I generate a furious_layout$/ do
 end
 
 When /^I generate a furious_layout named "([^\"]*)"$/ do |layout|
-  generate_layout(:haml => false)
+  generate_layout(layout)
 end
 
-When /^I generate a haml furious_layout named "([^\"]*)"$/ do |layout|
+When /^I generate a haml furious_layout$/ do
   generate_layout(:haml => true)
 end
 

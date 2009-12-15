@@ -32,9 +32,6 @@ module GeneratorHelpers
     local_options = !args.empty? && args.last.is_a?(Hash) ? args.pop : {}
     local_options.merge!({:destination => @app_root, :quiet => true})
 
-    puts 'ARGS:  ' + args.inspect
-    puts 'LOCAL: ' + local_options.inspect
-
     Rails::Generator::Scripts::Generate.new.run(args, local_options)
   end
 
@@ -55,7 +52,6 @@ module GeneratorHelpers
   end
 
   def stylesheet_exists?(style_name)
-    puts "TRYING: " + (File.join(@app_root, "public", "stylesheets", style_name))
     File.exists?(File.join(@app_root, "public", "stylesheets", style_name)).should be_true
   end
 
