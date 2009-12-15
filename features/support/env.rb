@@ -48,8 +48,6 @@ module GeneratorHelpers
 
   def generate_layout(*args)
     generate(:furious_layout, *args)
-
-    #Rails::Generator::Scripts::Generate.new.run(:generator => "furious_layout", :destination => @app_root, :quiet => true, :haml => true)
   end
 
   def javascript_exists?(script_name)
@@ -57,6 +55,7 @@ module GeneratorHelpers
   end
 
   def stylesheet_exists?(style_name)
+    puts "TRYING: " + (File.join(@app_root, "public", "stylesheets", style_name))
     File.exists?(File.join(@app_root, "public", "stylesheets", style_name)).should be_true
   end
 

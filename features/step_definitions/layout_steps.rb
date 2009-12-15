@@ -2,15 +2,15 @@ Given /^I have no layouts$/ do
   remove_layouts
 end
 
-When /^I generate a layout$/ do
+When /^I generate a furious_layout$/ do
   generate_layout
 end
 
-When /^I generate a layout named "([^\"]*)"$/ do |layout|
+When /^I generate a furious_layout named "([^\"]*)"$/ do |layout|
   generate_layout(:haml => false)
 end
 
-When /^I generate a haml layout named "([^\"]*)"$/ do |layout|
+When /^I generate a haml furious_layout named "([^\"]*)"$/ do |layout|
   generate_layout(:haml => true)
 end
 

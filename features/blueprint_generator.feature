@@ -2,6 +2,7 @@ Feature: Blueprint Generator
   In order to add styl-ee goodness
   I should be able to quickly add the blueprint stylesheets using a generator
 
+@focus
   Scenario: generating furious_blueprint
     Given I have a new rails application
     And I have no stylesheets

@@ -1,7 +1,7 @@
 class FuriousLayoutGenerator < Rails::Generator::Base
   default_options :haml => false
 
-  def initialize
+  def initialize(runtime_args, runtime_options = {})
     super
     @name = @args.first || "site"
   end
@@ -9,6 +9,7 @@ class FuriousLayoutGenerator < Rails::Generator::Base
   def manifest
     record do |m|
       m.directory 'public/stylesheets'
+      m.directory 'public/javascripts'
       m.directory 'app/helpers'
       m.directory 'app/views/layouts'
 
